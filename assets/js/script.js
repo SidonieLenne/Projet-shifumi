@@ -8,8 +8,8 @@ $(document).ready(function(){
     $('#button').click(function() {
         var ordiMove = array[Math.floor(array.length * Math.random())];
         var userMove = array[Math.floor(array.length * Math.random())];
-        $('#ordi').text(ordiMove);
-        $('#utilisateur').text(userMove);
+        $('#randomBlock').text(ordiMove);
+        $('#answer').text(userMove);
         if (userMove == ordiMove) {
             alert("Égalité");
         } else {
@@ -44,8 +44,8 @@ $(document).ready(function(){
       snap : '#emptyBlock'// Effet de magnétisme avec l'élément sélectionné
   });
     $( "#emptyBlock" ).droppable({// Rend l'élément droppable
-    accept: ".answer",// Permet de choisir les éléments acceptés dans le drop
-    classes: {// Feedback lorsque un élément droppable est séléctionné
+      accept: ".answer",// Permet de choisir les éléments acceptés dans le drop
+      classes: {// Feedback lorsque un élément droppable est séléctionné
       "ui-droppable-active": "ui-state-default"
     },
 });
