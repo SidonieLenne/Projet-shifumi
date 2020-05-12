@@ -7,7 +7,7 @@ $(document).ready(function(){
     var tryCount = 0;
     $('#button').click(function() {
         var ordiMove = array[Math.floor(array.length * Math.random())];
-        var userMove = array[Math.floor(array.length * Math.random())];    
+        var userMove = array[Math.floor(array.length * Math.random())];
         $('#ordi').text(ordiMove);
         $('#utilisateur').text(userMove);
         if (userMove == ordiMove) {
@@ -34,18 +34,17 @@ $(document).ready(function(){
                 tryCount++;
                 alert("Perdu...");
             }
-        }    
+        }
         $('#victory').text('Moi : ' + wins);
         $('#defeat').text('Ordinateur : ' + loses);
         $('#try').text(Math.floor(wins/tryCount*100) + '% de réussite');
     });
-});
-    $(".card").draggable({ // Rend l'élément draggable
+    $(".answer").draggable({ // Rend l'élément draggable
       revert : 'invalid',// L'élément revient à sa place si il n'est pas droppé au bon endroit
       snap : '#emptyBlock'// Effet de magnétisme avec l'élément sélectionné
   });
     $( "#emptyBlock" ).droppable({// Rend l'élément droppable
-    accept: ".card",// Permet de choisir les éléments acceptés dans le drop
+    accept: ".answer",// Permet de choisir les éléments acceptés dans le drop
     classes: {// Feedback lorsque un élément droppable est séléctionné
       "ui-droppable-active": "ui-state-default"
     },
