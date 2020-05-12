@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <title>SHIFUMI</title>
   <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/js/jquery-ui-1.12.1/jquery-ui.min.css">
 </head>
 <body>
   <!--Titre-->
@@ -20,7 +21,26 @@
   <p id="ordi"></p>
   <p id="utilisateur"></p>
   <button type="button" id="button">click</button>
+<!-- Drag and drop -->
+  <div id="dragDrop">
+    <div id="battleField">
+      <div class="block" id="emptyBlock">
+        <p id="dropHere">Déposer ici</p>
+      </div>
+      <div class="block card" id="randomBlock">
+      </div>
+    </div>
+    <div id="cardField">
+      <div class="block card" id="firstCard">
+      </div>
+      <div class="block card" id="secondCard">
+      </div>
+      <div class="block card" id="thirdCard">
+      </div>
+    </div>
+  </div>
   <script src="assets/js/jquery-3.5.1.min.js"></script>
+  <script src="assets/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
   <script src="assets/js/script.js"></script>
 </body>
 </html>
