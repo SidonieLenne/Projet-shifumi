@@ -6,10 +6,17 @@ $(document).ready(function(){
     var loses = 0;
     var tryCount = 0;
     var userMove = null;
-    
-    //...........................................Rend les réponses draggables    
+    var ordiMove = null;
+    //............................................Bouton Réinitialiser........................................................
+    $('#tryAgain').click(function(){
+        wins = 0;//Ne fonctionne pas
+        loses = 0;//Ne fonctionne pas 
+        tryCount = 0;//Ne fonctionne pas
+        $('#randomBlock').css('background-image', 'none');  
+    });
+    //...........................................Rend les réponses draggables..............................................   
     $(".answer").draggable({
-        revert : 'invalid',
+        revert : 'valid',//Renvoie l'élément à sa place une fois droppé
         snap : '#emptyBlock',//Elles sont attirées par le bloc droppable
         
     });
@@ -23,18 +30,24 @@ $(document).ready(function(){
     $('#thirdCard').mouseup(function(){
         userMove = 'Ciseaux';
     });
-    //......................................................Rend le "déposez ici" droppable    
+    //............................................Rend le "déposez ici" droppable...........................................    
     $( "#emptyBlock" ).droppable({
         accept: ".answer", //Le bloc n'accepte de recevoir que les blocs avec la classe answer
         classes: {
             "ui-droppable-active": "ui-state-default"    
         },
-        //.................Une fois qu'on drop un élément dans "emptyBlock", cette fonction se déclenche
+        //..............Une fois qu'on drop un élément dans "emptyBlock", cette fonction se déclenche............
         drop:function(){ 
             //Choisis au hasard une valeur dans le tableau déclaré plus haut
             var ordiMove = array[Math.floor(array.length * Math.random())];
-            
-            $('#randomBlock').text(ordiMove);
+            //Met les images correspondantes au choix de l'ordi sur randomBlock
+            if (ordiMove == "Pierre"){
+                $('#randomBlock').css({'background-image': 'url(assets/images/petitepierre.png)', 'background-size' : 'contain'});
+            } else if (ordiMove == "Feuille"){
+                $('#randomBlock').css({'background-image': 'url(assets/images/petitpapier.png)', 'background-size' : 'contain'});
+            } else if (ordiMove == "Ciseaux"){
+                $('#randomBlock').css({'background-image': 'url(assets/images/petitciseau.png)', 'background-size' : 'contain'});
+            }
             //Conditions
             //SI USER = ORDI, alerte Egalité, +1 compteur d'essais
             if (userMove == ordiMove){
