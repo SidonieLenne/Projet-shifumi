@@ -5,40 +5,46 @@
   <meta name="description" content="Très probablement le meilleur jeu de shifumi/shifoumi/chifoumi/pierre-papier-feuille-ciseaux/pierre-papier-ciseaux/pierre-feuille-ciseaux/pierre-caillou-feuille-papier-coupe-coupe-ciseaux de tout le Web."/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <title>SHIFUMI</title>
+   <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
   <link rel="stylesheet" href="assets/js/jquery-ui-1.12.1/jquery-ui.min.css">
+
 </head>
 <body>
   <!--Titre-->
   <h1>SHI FU MI</h1>
-  <!--Nombre de victoires-->
-  <p id="victory">Moi : 0</p>
-  <!--Nombre de défaites-->
-  <p id="defeat">Ordinateur : 0</p>
-  <!--Nombre d'essais (à transformer en %)-->
-  <p id="try"></p>
-  <!--Test-->
-  <p id="ordi"></p>
-  <p id="utilisateur"></p>
-  <button type="button" id="button">click</button>
+  <main>
+    <div id="counter">
+      <!--Nombre d'essais (à transformer en %)-->
+      <p id="victory">Moi : 0</p>
+      <button type="button" name="button" id="tryAgain" hidden>Réessayer !</button>
+      <p id="defeat">Ordinateur : 0</p>
+    </div>
 <!-- Drag and drop -->
   <div id="dragDrop">
     <div id="battleField">
+      <!--Nombre de victoires-->
       <div class="block" id="emptyBlock">
         <p id="dropHere">Déposer ici</p>
       </div>
       <div class="block card" id="randomBlock">
       </div>
+      <!--Nombre de défaites-->
     </div>
     <div id="cardField">
       <div class="block card answer" id="firstCard">
+        <img src="assets/images/pierre.png" alt="pierre">
       </div>
       <div class="block card answer" id="secondCard">
+        <img src="assets/images/papier.png" alt="papier">
       </div>
       <div class="block card answer" id="thirdCard">
+        <img src="assets/images/ciseaux.png" alt="ciseaux">
       </div>
     </div>
   </div>
+  <p id="try">Victoire : </p>
+  </main>
   <script src="assets/js/jquery-3.5.1.min.js"></script>
   <script src="assets/js/jquery-ui-1.12.1/jquery-ui.min.js"></script>
   <script src="assets/js/script.js"></script>
