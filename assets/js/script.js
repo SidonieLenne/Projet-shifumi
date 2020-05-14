@@ -20,9 +20,9 @@ $(document).ready(function(){
     });
     //...........................................Rend les réponses draggables..............................................
     $(".answer").draggable({
-        revert : 'valid',//Renvoie l'élément à sa place une fois droppé
+        revert : true,//Renvoie l'élément toujours à sa place 
         snap : '#emptyBlock',//Elles sont attirées par le bloc droppable
-
+        snapMode: 'inner' // Permet le magnétisme sur l'interieur du block
     });
     //Quand le clic de la souris se relève, ça fait passer userMove de null à "Pierre", "Feuille" ou "Ciseaux" selon le bloc qui est cliqué
     $('#firstCard').mouseup(function(){
@@ -97,7 +97,7 @@ $(document).ready(function(){
             $('#tryAgain').css('display', 'block');
             //Au mouseover sur une carte réponse, la carte ordi redevient blanche
             $('.answer').mousedown(function(){
-                $('#randomBlock').css('background-image', 'none'); 
+                $('#randomBlock').css('background-image', 'none');
             });
         }
     });
