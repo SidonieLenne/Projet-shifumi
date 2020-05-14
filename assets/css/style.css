@@ -36,6 +36,7 @@
   border-radius: 18px 18px 18px 18px;
   justify-content: center;
   align-items: center;
+  font-family: 'Rajdhani', sans-serif;
 }
 h1{
   font-size: 2.5em;
@@ -80,11 +81,12 @@ img{
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.7em;
   padding: 0.7em;
-  margin: 0em 1em 0.5em 1em;
+  margin: 0em 1em 0em 1em;
   text-align: center;
 }
 #winLose{
   color:#f2a500;
+  margin-left: 2em;
 }
 body{
   margin: 0.2em;
@@ -96,6 +98,7 @@ main{
   border-radius:22px;
 }
 #tryAgain {
+  height: 2em;
   margin:auto;
   box-shadow: 3px 3px 1px  #a1a1a1;
   background-color:#ffffff;
