@@ -34,6 +34,25 @@ $(document).ready(function(){
     $('#thirdCard').mouseup(function(){
         userMove = 'Ciseaux';
     });
+    //Mouseenter change l'image des cartes, et mouseleave les rechange
+    $('#firstCard').mouseenter(function(){
+        $(this).css({'background-image': 'url(assets/images/petitepierre.png)', 'background-size' : 'contain'});
+    });
+    $('#secondCard').mouseenter(function(){
+        $(this).css({'background-image': 'url(assets/images/petitpapier.png)', 'background-size' : 'contain'});
+    });
+    $('#thirdCard').mouseenter(function(){
+        $(this).css({'background-image': 'url(assets/images/petitciseau.png)', 'background-size' : 'contain'});
+    });
+    $('#firstCard').mouseleave(function(){
+        $(this).css({'background-image': 'url(assets/images/petitepierrecontente.png)', 'background-size' : 'contain'});
+    });
+    $('#secondCard').mouseleave(function(){
+        $(this).css({'background-image': 'url(assets/images/petitpapiercontent.png)', 'background-size' : 'contain'});
+    });
+    $('#thirdCard').mouseleave(function(){
+        $(this).css({'background-image': 'url(assets/images/petitciseaucontent.png)', 'background-size' : 'contain'});
+    });
     //............................................Rend le "déposez ici" droppable...........................................
     $( "#emptyBlock" ).droppable({
         accept: ".answer", //Le bloc n'accepte de recevoir que les blocs avec la classe answer
@@ -102,7 +121,7 @@ $(document).ready(function(){
             $('#try').text(Math.floor(wins/tryCount*100) + '% de réussite');
             //Fait apparaître le bouton réinitialiser après avoir joué le premier coup
             $('#tryAgain').css('display', 'block');
-            //Au mouseover sur une carte réponse, la carte ordi redevient blanche
+            //Au mousedown sur une carte réponse, la carte ordi redevient blanche
             $('.answer').mousedown(function(){
                 $('#randomBlock').css('background-image', 'none');
             });

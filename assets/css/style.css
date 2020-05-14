@@ -57,13 +57,13 @@ img{
   width: 8em;
 }
 #firstCard{
-  background-image:url("../images/petitepierre.png");
+  background-image:url("../images/petitepierrecontente.png");
 }
 #secondCard{
-  background-image:url("../images/petitpapier.png");
+  background-image:url("../images/petitpapiercontent.png");
 }
 #thirdCard{
-  background-image:url("../images/petitciseau.png");
+  background-image:url("../images/petitciseaucontent.png");
 }
 .answer{
   background-size: contain;
