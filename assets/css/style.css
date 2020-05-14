@@ -56,6 +56,18 @@ img{
   display: flex;
   width: 8em;
 }
+#firstCard{
+  background-image:url("../images/petitepierre.png");
+}
+#secondCard{
+  background-image:url("../images/petitpapier.png");
+}
+#thirdCard{
+  background-image:url("../images/petitciseau.png");
+}
+.answer{
+  background-size: contain;
+}
 #counter{
   display: flex;
   justify-content: space-between;
@@ -68,8 +80,11 @@ img{
   font-family: 'Rajdhani', sans-serif;
   font-size: 1.7em;
   padding: 0.7em;
-  margin: 0em 1em 1em 1em;
+  margin: 0em 1em 0.5em 1em;
   text-align: center;
+}
+#winLose{
+  color:#f2a500;
 }
 body{
   margin: 0.2em;
@@ -81,9 +96,7 @@ main{
   border-radius:22px;
 }
 #tryAgain {
-  margin-left: 2.5em;
-  margin-top: 1em;
-  height: 1.5em;
+  margin:auto;
   box-shadow: 3px 3px 1px  #a1a1a1;
   background-color:#ffffff;
   border-radius:22px;
@@ -92,7 +105,6 @@ main{
   font-size:1em;
   line-height:1em;
   text-align:center;
-  vertical-align: middle;
   font-family: 'Rajdhani', sans-serif;
 }
 #tryAgain:hover {

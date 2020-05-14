@@ -14,7 +14,9 @@ $(document).ready(function(){
         tryCount = 0;//Ne fonctionne pas
         $('#victory').text('Moi : ' + wins);
         $('#defeat').text('Ordinateur : ' + loses);
+        $('#try').text('Victoire : ');
         $('#randomBlock').css('background-image', 'none');
+        $('#winLose').text('');
     });
     //...........................................Rend les réponses draggables..............................................
     $(".answer").draggable({
@@ -55,42 +57,48 @@ $(document).ready(function(){
             if (userMove == ordiMove){
                 tryCount++;
                 wins = wins + 0;
-                alert('Egalité!');
+                $('#winLose').text('Egalité!');
                 //SINON SI USER = Pierre et ORDI = Ciseaux, alerte Gagné, +1  compteur d'essais, +1 compteur gagné
             } else if (userMove == 'Pierre' && ordiMove == 'Ciseaux'){
                 wins++;
                 tryCount++;
-                alert('Gagné!');
+                $('#winLose').text('Gagné!');
                 //SINON SI USER = Feuille et ORDI = Pierre, alerte Gagné, +1  compteur d'essais, +1 compteur gagné
             } else if (userMove == 'Feuille' && ordiMove == 'Pierre'){
                 wins++;
                 tryCount++;
-                alert('Gagné!');
+                $('#winLose').text('Gagné!');
                 //SINON SI USER = Ciseaux et ORDI = Feuille, alerte Gagné, +1  compteur d'essais, +1 compteur gagné
             } else if (userMove == 'Ciseaux' && ordiMove == 'Feuille'){
                 wins++;
                 tryCount++;
-                alert('Gagné!');
+                $('#winLose').text('Gagné!');
                 //SINON SI ORDI = Pierre et USER = Ciseaux, alerte Perdu, +1  compteur d'essais, +1 compteur perdu
             } else if (ordiMove == 'Pierre' && userMove == 'Ciseaux'){
                 loses++;
                 tryCount++;
-                alert('Perdu...');
+                $('#winLose').text('Perdu...');
                 //SINON SI ORDI = Feuille et USER = Pierre, alerte Perdu, +1  compteur d'essais, +1 compteur perdu
             } else if (ordiMove == 'Feuille' && userMove == 'Pierre'){
                 loses++;
                 tryCount++;
-                alert('Perdu...');
+                $('#winLose').text('Perdu...');
                 //SINON SI ORDI = Ciseaux et USER = Feuille, alerte Perdu, +1  compteur d'essais, +1 compteur perdu
             } else if (ordiMove == 'Ciseaux' && userMove == 'Feuille'){
                 loses++;
                 tryCount++;
-                alert('Perdu...');
+                $('#winLose').text('Perdu...');
             }
             //Textes nombre de victoires, nombre de défaites et pourcentage de victoires
             $('#victory').text('Moi : ' + wins);
             $('#defeat').text('Ordinateur : ' + loses);
             $('#try').text(Math.floor(wins/tryCount*100) + '% de réussite');
+            //Fait apparaître le bouton réinitialiser après avoir joué le premier coup
+            $('#tryAgain').css('display', 'block');
+            //Au mouseover sur une carte réponse, la carte ordi redevient blanche
+            $('.answer').mousedown(function(){
+                $('#randomBlock').css('background-image', 'none'); 
+            });
         }
     });
 });
