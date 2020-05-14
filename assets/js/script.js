@@ -58,36 +58,43 @@ $(document).ready(function(){
                 tryCount++;
                 wins = wins + 0;
                 $('#winLose').text('Egalité!');
+                $('#winLose').css('color', '#f2a500');
                 //SINON SI USER = Pierre et ORDI = Ciseaux, alerte Gagné, +1  compteur d'essais, +1 compteur gagné
             } else if (userMove == 'Pierre' && ordiMove == 'Ciseaux'){
                 wins++;
                 tryCount++;
                 $('#winLose').text('Gagné!');
+                $('#winLose').css('color', 'green');
                 //SINON SI USER = Feuille et ORDI = Pierre, alerte Gagné, +1  compteur d'essais, +1 compteur gagné
             } else if (userMove == 'Feuille' && ordiMove == 'Pierre'){
                 wins++;
                 tryCount++;
                 $('#winLose').text('Gagné!');
+                $('#winLose').css('color', 'green');
                 //SINON SI USER = Ciseaux et ORDI = Feuille, alerte Gagné, +1  compteur d'essais, +1 compteur gagné
             } else if (userMove == 'Ciseaux' && ordiMove == 'Feuille'){
                 wins++;
                 tryCount++;
                 $('#winLose').text('Gagné!');
+                $('#winLose').css('color', 'green');
                 //SINON SI ORDI = Pierre et USER = Ciseaux, alerte Perdu, +1  compteur d'essais, +1 compteur perdu
             } else if (ordiMove == 'Pierre' && userMove == 'Ciseaux'){
                 loses++;
                 tryCount++;
                 $('#winLose').text('Perdu...');
+                $('#winLose').css('color', 'red');
                 //SINON SI ORDI = Feuille et USER = Pierre, alerte Perdu, +1  compteur d'essais, +1 compteur perdu
             } else if (ordiMove == 'Feuille' && userMove == 'Pierre'){
                 loses++;
                 tryCount++;
                 $('#winLose').text('Perdu...');
+                $('#winLose').css('color', 'red');
                 //SINON SI ORDI = Ciseaux et USER = Feuille, alerte Perdu, +1  compteur d'essais, +1 compteur perdu
             } else if (ordiMove == 'Ciseaux' && userMove == 'Feuille'){
                 loses++;
                 tryCount++;
                 $('#winLose').text('Perdu...');
+                $('#winLose').css('color', 'red');
             }
             //Textes nombre de victoires, nombre de défaites et pourcentage de victoires
             $('#victory').text('Moi : ' + wins);
